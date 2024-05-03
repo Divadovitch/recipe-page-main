@@ -1,0 +1,145 @@
+/* variables */
+:root {
+  /* colors */
+  --primary: hsl(14, 45%, 36%);
+  --secondary: hsl(332, 51%, 32%);
+
+  --white: hsl(0, 0%, 100%);
+  --rose-white: hsl(330, 100%, 98%);
+  --eggshell: hsl(30, 54%, 90%);
+  --light-grey: hsl(30, 18%, 87%);
+  --wenge-brown: hsl(30, 10%, 34%);
+  --dark-charcoal: hsl(24, 5%, 18%);
+  /* font */
+  --ff-title: "Young Serif", serif;
+  --ff-body: "Outfit", sans-serif;
+  /* font-weight */
+  --fw-m: 400;
+  --fw-l: 600;
+  --fw-xl: 700;
+
+  --letter-spacing-m: 0.05em;
+}
+
+/* element */
+
+body {
+  background-color: var(--eggshell);
+  margin: 0;
+  font-family: var(--ff-body);
+  font-optical-sizing: auto;
+  font-weight: var(--fw-m);
+  font-style: normal;
+  line-height: 1.5em;
+  color: var(--dark-charcoal);
+}
+
+h1 {
+  font-family: var(--ff-title);
+  font-size: clamp(2rem, 1.86rem + 0.6vw, 2.4rem);
+  letter-spacing: var(--letter-spacing-m);
+  line-height: 1em;
+}
+
+h2 {
+  font-family: var(--ff-title);
+  font-size: 1.6rem;
+  letter-spacing: var(--letter-spacing-m);
+  color: var(--primary);
+}
+
+ul,
+ol {
+  padding-inline-start: 1.5rem;
+}
+ul li::marker {
+  font-size: 0.8rem;
+}
+
+li {
+  margin-block: 1rem;
+  padding-inline-start: 1rem;
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid var(--light-grey);
+  padding-top: 1rem;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+td {
+  padding: 1rem 2rem;
+}
+tr {
+  border-bottom: 1px solid var(--light-grey);
+}
+tr:last-child {
+  border: none;
+}
+tr td:last-child {
+  font-weight: var(--fw-xl);
+  color: var(--primary);
+}
+
+/* class */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  margin-block: clamp(0rem, -2.227rem + 6.919vw, 4rem);
+}
+
+.recipe {
+  background-color: var(--white);
+  box-sizing: border-box;
+  width: 720px;
+  padding: 2rem;
+  border-radius: 1rem;
+  container-type: inline-size ;
+}
+
+.recipe__image {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+@container (max-width: 450px) {
+  .recipe__image {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-top: -2rem;
+    border-radius: 0;
+  }
+}  
+
+.preptime {
+  background-color: var(--rose-white);
+  margin-top: 2rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+}
+.preptime__title {
+  font-family: var(--ff-body);
+  font-size: 1.3rem;
+  letter-spacing: 0;
+  color: var(--secondary);
+}
+.preptime__list li::marker {
+  color: var(--secondary);
+}
+.ingredients__list li::marker {
+  color: var(--primary);
+}
+.instructions__list li::marker {
+  color: var(--primary);
+  font-weight: var(--fw-xl);
+}
